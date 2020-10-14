@@ -12,4 +12,5 @@ workflows:
           tag: 'latest'
   heroku_deploy:
     jobs:
-      - heroku/deploy-via-git: # Use the pre-configured job, deploy-via-git
+      - heroku/push-docker-image:
+          app-name: $HEROKU_APP_NAME
