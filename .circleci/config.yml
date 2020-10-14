@@ -1,7 +1,6 @@
 version: 2.1
 
 orbs:
-  heroku: circleci/heroku@1.2.2 # Invoke the Heroku orb
   docker: circleci/docker@1.0.0 # Invoke Docker orb
 
 workflows:
@@ -10,7 +9,4 @@ workflows:
       - docker/publish:
           image: $DOCKER_LOGIN/$CIRCLE_PROJECT_REPONAME
           tag: 'latest'
-  heroku_deploy:
-    jobs:
-      - heroku/push-docker-image:
-          app-name: $HEROKU_APP_NAME
+          
